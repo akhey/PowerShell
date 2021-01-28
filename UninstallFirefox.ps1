@@ -285,7 +285,7 @@ If (Test-Path $env:ProgramFiles"\Mozilla Firefox\uninstall\helper.exe") {
 	Uninstall-EXE -DisplayName "Mozilla Firefox" -Executable $env:ProgramFiles"\Mozilla Firefox\uninstall\helper.exe" -Switches "/S"
 	Remove-Directory -Directory $env:ProgramFiles"\Mozilla Firefox" -Recurse
 	#Remove-Directory -Directory $env:ProgramFiles"\Mozilla Firefox" -Recurse 1
-} elseif (Test-Path ${env:ProgramFiles(x86)}"\Mozilla Firefox\uninstall\helper.exe") {
+} if (Test-Path ${env:ProgramFiles(x86)}"\Mozilla Firefox\uninstall\helper.exe") {
 	Uninstall-EXE -DisplayName "Mozilla Firefox" -Executable ${env:ProgramFiles(x86)}"\Mozilla Firefox\uninstall\helper.exe" -Switches "/S"
 	Remove-Directory -Directory ${env:ProgramFiles(x86)}"\Mozilla Firefox" -Recurse
 	#Remove-Directory -Directory ${env:ProgramFiles(x86)}"\Mozilla Firefox" -Recurse 1
